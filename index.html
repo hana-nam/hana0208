@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <script src="https://unpkg.com/feather-icons"></script> <!-- https://feathericons.com/ -->
+
+
+
+
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <h1 class="logo">My portfolio</h1>
+      <nav class="gnb">
+        <a href="portfolio01.html">Home</a>
+        <a href="detail00.html">Resume</a>
+        <!-- <a href="contact.html">Contact</a> -->
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main>
+
+    <!-- Hero -->	
+    <section class="hero">
+	
+      <h2>반응형 웹 포트폴리오</h2>
+      <p>모바일 퍼스트 기반의 UI 디자인</p>
+	  <!-- <button class="btn btn--primary">시작하기</button> -->
+<!-- 
+	  <button class="btn btn--secondary">자세히</button>
+       <button class="btn btn--ghost">취소</button>
+-->
+    </section>
+
+
+    <!-- parallax -->
+	<section class="parallax">
+	 <div class="parallax-bg"></div>
+	 <div class="parallax-content">
+		<h1>creative solutions</h1>
+		<p>UI is an area that evaluates the external part of the system that a user encounters. On the other hand, UX refers to the total user experience felt by the product.</p>
+     </div>
+	</section>
+
+
+
+
+    <!-- Features -->
+    <section class="features">
+	
+      <h3>주요 기능</h3>
+      <div class="card-list">
+
+        <article class="card">
+			<i data-feather="user"></i>
+			<h4>​​Resume</h4>
+			<p>자기소개서 및 이력서</p>
+			<button class="btn btn--secondary open-modal" data-target="modal-a">
+			자세히
+			</button>
+		</article>
+
+		<article class="card">
+			<i data-feather="image"></i>
+			<h4>Product Detail Page</h4>
+			<p>상세페이지 디자인</p>
+			<button class="btn btn--secondary open-modal" data-target="modal-b">
+			자세히
+			</button>
+		</article>
+
+		<article class="card">
+			<i data-feather="send"></i>
+			<h4>Contact</h4>
+			<p>연락 문의</p>
+			<button class="btn btn--secondary open-modal" data-target="modal-c">
+			자세히
+			</button>
+		</article>
+
+
+      </div> 
+<!--
+	  <article class="card">
+  <h4>Responsive</h4>
+  <p>모바일 퍼스트 반응형</p>
+  <button class="btn btn--secondary open-modal" data-target="modal-responsive">
+    자세히
+  </button>
+</article>
+-->
+	
+    </section>
+
+
+
+  </main>
+
+<!-- 팝업 이력서-->
+<div class="modal" id="modal-a">
+  <div class="modal-overlay"></div>
+  <div class="modal-content">
+    <button class="modal-close">×</button>
+    <h2>자기소개서 및 이력서</h2>
+	
+		
+		<button class="btn btn--primary"><a href="detail00.html">바로가기</a></button>
+   
+  </div>
+</div>
+<!-- 팝업 이력서 끝 -->
+
+<!-- 팝업 상세페이지-->
+<div class="modal" id="modal-b">
+  <div class="modal-overlay"></div>
+  <div class="modal-content">
+    <button class="modal-close">×</button>
+    <h2>상세페이지 디자인 목록</h2>
+	
+    <p>
+	  <a href="detail01.html"><img src="https://imgur.com/6dDlvRn.jpg"></a>
+      <a href="detail02.html"><img src="https://imgur.com/sc9fX6b.jpg"></a>
+	  <a href="detail03.html"><img src="https://imgur.com/gGdybLp.jpg"></a>
+	
+    </p>
+  </div>
+</div>
+<!-- 팝업 상세페이지 끝 -->
+
+<!-- 팝업 이메일-->
+<div class="modal" id="modal-c">
+  <div class="modal-overlay"></div>
+  <div class="modal-content">
+    <button class="modal-close">×</button>
+    <h2>남하나</h2>
+    <div class="contentP"><i data-feather="phone"></i>　010.9919.0493</div>
+	<div class="contentP"><i data-feather="mail"></i>　1006law@gmail.com</div>
+	<div class="contentP"><i data-feather="home"></i>　경기도 양주시 회천로 200</div>
+  </div>
+</div>
+<!-- 팝업 이메일 끝 -->
+
+
+
+
+  <!-- Footer -->
+  <footer class="site-footer">
+  <div class="container">
+    <p>© 2026. [Nam hana] All rights reserved.</p>
+	</div>
+  </footer>
+  <!-- Footer 끝 -->
+
+  <script>
+   feather.replace()
+  </script>
+
+  <script>
+	const section = document.querySelector('.parallax');
+	const bg = document.querySelector('.parallax-bg');
+
+	let current = 0;
+	let target = 0;
+
+	function animate() {
+	const rect = section.getBoundingClientRect();
+	const scrollTop = window.scrollY;
+	 const offsetTop = scrollTop + rect.top;
+
+	target = scrollTop - offsetTop;
+	current += (target - current) * 0.08;
+
+	bg.style.transform = `translateY(${current * 0.3}px)`;
+
+	requestAnimationFrame(animate);
+	}
+
+	animate();
+  </script>
+
+  <script>
+  const openButtons = document.querySelectorAll('.open-modal');
+  const modals = document.querySelectorAll('.modal');
+
+  // 열기
+  openButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetId = btn.dataset.target;
+
+      // 혹시 열려있는 모달이 있으면 닫기
+      modals.forEach(m => m.classList.remove('active'));
+
+      document.getElementById(targetId).classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  // 닫기 (overlay / close 버튼)
+  modals.forEach(modal => {
+    modal.addEventListener('click', e => {
+      if (
+        e.target.classList.contains('modal-overlay') ||
+        e.target.classList.contains('modal-close')
+      ) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+  });
+  </script>
+
+
+
+
+</body>
+</html>
