@@ -1,0 +1,546 @@
+/* =====================
+   기본 세팅 (Mobile First)
+===================== */
+:root {
+  --color-primary: #4f46e5;
+  --color-bg: #f9fafb;
+  --color-text: #111827;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  /*font-family: system-ui, sans-serif;*/
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  line-height: 1.6;
+}
+
+img { vertical-align: top; }
+
+br { display: none; }
+
+a { 
+	text-decoration: none; 
+	color: #000; 
+}
+
+
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+
+
+/* =====================
+   Header
+===================== */
+.site-header {
+  background: #fff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+}
+
+.gnb a {
+  margin-left: 16px;
+  text-decoration: none;
+  color: var(--color-text);
+  font-size: 0.9rem;
+}
+
+/* =====================
+   Hero
+===================== */
+.hero {
+  padding: 48px 16px;
+  text-align: center;
+}
+
+
+.hero h2 {
+  font-size: 1.8rem;
+}
+
+.primary-btn {
+  margin-top: 16px;
+  padding: 12px 24px;
+  border: none;
+  background: var(--color-primary);
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* =====================
+   parallax
+===================== */
+.parallax {
+  position: relative;
+  height: 50vh;
+  overflow: hidden;
+}
+
+.parallax-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 120%;
+  height: 120%; /* 위아래 여유 */
+  background-image: url("https://imgur.com/NXFGbvi.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  will-change: transform;
+}
+
+/* 고정 텍스트 */
+.parallax-content {
+  position: relative; /* 핵심 */
+  z-index: 2;
+  height: 100%;
+  width:30%;
+  min-width:200px;
+  padding:20px;
+
+  display: block;
+  align-items: center;
+  justify-content: center;
+
+  color: #2732b1;
+  text-align: left;
+}
+
+
+
+
+/* =====================
+   Features
+===================== */
+.features {
+  padding: 32px 16px;
+}
+
+.features02 {
+  padding: 0 16px 0 16px ;
+}
+
+
+.card-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.card-list02 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 12px;
+}
+
+
+/*
+.card01 {
+  background: #ddd;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.card02 {
+  background: #fff;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.card03 {
+  background: #ddd;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+*/
+
+
+
+/* =====================
+   Tablet & Desktop
+===================== */
+@media (min-width: 768px) {
+  .hero {
+    padding: 60px 40px /*80px 40px*/;
+  }
+
+  .hero h2 {
+    font-size: 2.4rem;
+  }
+
+  .header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+
+/* =====================
+   버튼 공통 스타일
+===================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 44px; /* 터치 영역 */
+  padding: 0 20px;
+
+  font-size: 0.95rem;
+  font-weight: 500;
+
+  border-radius: 12px;
+  border: 1px solid transparent;
+
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.btn01 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 44px; /* 터치 영역 */
+  margin : 20px;
+  padding: 0 20px;
+
+  font-size: 0.95rem;
+  font-weight: 500;
+
+  border-radius: 12px;
+  border: 1px solid transparent;
+
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+
+/*Primary 버튼*/
+.btn--primary {
+  background: #ddd;
+  color: #000;
+}
+
+.btn--primary:hover {
+  background: var(--color-primary-hover);
+}
+
+/*secondary 버튼*/
+.btn--secondary {
+  background: var(--color-surface);
+  color: var(--color-text-primary);
+  border-color: var(--color-border);
+}
+
+.btn--secondary:hover {
+  background: var(--color-bg);
+}
+
+/*ghost 버튼*/
+.btn--ghost {
+  background: transparent;
+  color: var(--color-text-secondary);
+}
+
+.btn--ghost:hover {
+  color: var(--color-text-primary);
+}
+
+
+/* =====================
+   카드 공통 스타일
+===================== */
+.card {
+  background:#fff; /*var(--color-surface);*/
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 24px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.card h4 {
+  margin: 0 0 8px;
+  font-size: 1.1rem;
+}
+
+.card p {
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+}
+
+
+.card2 {
+  background:#fff; /*var(--color-surface);*/
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 24px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.card2 h4 {
+  margin: 0 0 8px;
+  font-size: 1.1rem;
+}
+
+.card2 p {
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+}
+
+.card2 img{
+	 max-width: 30%; /* 부모 너비보다 커지지 않음 */
+	 height: auto;    /* 세로 비율 자동 조정 */
+ 
+}
+
+.card2 .PROFILE_box01{
+width:30%;
+text-align:center;
+
+}
+
+.card2 .PROFILE_box02{
+margin-left:200px;
+margin-top:-50%;
+}
+
+/*Hover 인터랙션*/
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+
+.card--link:hover {
+  border-color: var(--color-primary);
+}
+
+/*클릭 가능 카드 스타일*/
+.card--link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+/*카드 안에 요약 정보 구조*/
+.card-cta {
+  margin-top: 12px;
+  display: inline-block;
+  font-size: 0.85rem;
+  color: var(--color-primary);
+}
+
+.card--link {
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+
+/*화살표, 더보기 힌트*/
+.card--link::after {
+  content: ">";
+  display: inline-block;
+  margin: 8px;
+  color: var(--color-text-secondary);
+  transition: transform 0.2s;
+}
+
+.card--link:hover::after {
+  transform: translateX(4px);
+}
+
+
+
+/* =====================
+   팝업창
+===================== */
+/* Modal base */
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+
+}
+
+.modal p {text-align: center;}
+
+.modal .contentP {text-align: left;}
+
+.modal img {
+  max-width: 30%; /* 부모 너비보다 커지지 않음 */
+  height: auto;    /* 세로 비율 자동 조정 */
+ 
+}
+
+
+.modal.active {
+   opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+
+}
+
+/* Dim */
+.modal-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+}
+
+
+/* Content */
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -48%) scale(0.98);
+  opacity: 0;
+
+
+  width: 90%;
+  max-width: 640px;
+
+  background:#fff; /*var(--color-surface);*/
+  padding: 32px;
+  border-radius: 16px;
+
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* 활성화 시 콘텐츠 애니메이션 */
+.modal.active .modal-content {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+
+
+/* Close button */
+.modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+
+/* =====================
+   Footer
+===================== */
+.site-footer {
+  text-align: center;
+  padding: 24px;
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+
+
+/* =====================
+   detail00.html
+===================== */
+.desc {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeUp 0.6s ease forwards;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/*-------------------------------------------------------------------------*/
+/*  Skill bar style
+/*-------------------------------------------------------------------------*/
+.skill {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.skill-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.label {
+  width: 80px;
+  font-size: 14px;
+}
+
+.bar {
+  flex: 1;
+  height: 8px;
+  background: #eee;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  width: 0;
+  background: #111;
+  border-radius: 4px;
+  animation: grow 1s ease forwards;
+}
+
+.value {
+  width: 40px;
+  font-size: 13px;
+  text-align: right;
+}
+
+/* 퍼센트별 너비 */
+.fill.aa { width: 100%; }
+.fill.bb  { width: 100%; }
+.fill.cc   { width: 95%; }
+
+@keyframes grow {
+  from { width: 0; }
+}
+
+@media (max-width: 480px) {
+  .label {
+    width: 60px;
+    font-size: 13px;
+  }
+
+  .value {
+    width: 32px;
+    font-size: 12px;
+  }
+}
