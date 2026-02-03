@@ -67,6 +67,19 @@ a {
   font-size: 1.8rem;
 }
 
+
+.hero2 {
+  padding: 48px 16px;
+  text-align: center;
+}
+
+
+.hero2 img {
+  width:100%;
+  height:auto;
+}
+
+
 .primary-btn {
   margin-top: 16px;
   padding: 12px 24px;
@@ -324,8 +337,8 @@ text-align:center;
 }
 
 .card2 .PROFILE_box02{
-margin-left:200px;
-margin-top:-50%;
+margin-left:40%;
+margin-top:-52%;
 }
 
 /*Hover 인터랙션*/
