@@ -540,7 +540,7 @@ margin-top:-52%;
 /* 퍼센트별 너비 */
 .fill.aa { width: 100%; }
 .fill.bb  { width: 100%; }
-.fill.cc   { width: 95%; }
+.fill.cc   { width: 80%; }
 
 @keyframes grow {
   from { width: 0; }
