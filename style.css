@@ -445,6 +445,8 @@ margin-top:-52%;
   border-radius: 16px;
 
   transition: transform 0.3s ease, opacity 0.3s ease;
+
+  text-align:center;
 }
 
 /* 활성화 시 콘텐츠 애니메이션 */
@@ -556,4 +558,35 @@ margin-top:-52%;
     width: 32px;
     font-size: 12px;
   }
+}
+
+/*이미지 슬라이드*/
+
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+
+
+.slider {
+  width: 860px;
+  height: 1000px;   /* 고정 */
+  overflow: hidden;
+  margin : 0 auto;
+  margin-bottom: 50px;
+}
+
+.slides img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+
+.silder_B button:hover {
+  background: black;
+  color: white;
 }
